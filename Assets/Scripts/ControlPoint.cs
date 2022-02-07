@@ -10,9 +10,10 @@ public class ControlPoint : MonoBehaviour
 
     public Rigidbody ball;
     public float rotationSpeed = 2f;
-
-    public float shootPower = 10f;
-
+    [SerializeField] 
+    public float shootPower;
+    [SerializeField]
+    public bool debugVelocity = false;
     public LineRenderer line;
 
     private void Start()
@@ -49,12 +50,26 @@ public class ControlPoint : MonoBehaviour
             line.gameObject.SetActive(false);
         }
         
-        Debug.Log("current velocity: " + ball.velocity);
+        if (Input.GetKey(KeyCode.R))
+        {
+            ResetPosition();
+        }
+
+        if (debugVelocity)
+        {
+            Debug.Log("current velocity: " + ball.velocity);
+        }
+        
     }
 
     public void ResetPosition()
     {
         ball.position = initPosition;
         ball.velocity = Vector3.zero;
+    }
+
+    public void AdjustPower(float power)
+    {
+        shootPower = power;
     }
 }
