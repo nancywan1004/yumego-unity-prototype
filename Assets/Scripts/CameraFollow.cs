@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     private Vector3 initPosition;
     private Quaternion initRotation;
     public Transform target;
+    public ControlPoint ballController; 
 
     public float speed = 15f;
 
@@ -20,8 +21,16 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.deltaTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, speed * Time.deltaTime);
+        // if (ballController != null && !ballController.isBallRest())
+        // {
+            transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.deltaTime);
+            // if (ballController.isBallLaunching())
+            // {
+                transform.rotation = Quaternion.Lerp(transform.rotation,  target.rotation, speed * Time.deltaTime);
+        //     }
+        // }
+
+        
     }
 
     public void ResetPosition()
