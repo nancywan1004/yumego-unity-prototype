@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
-namespace DigitalRubyShared
-{
-    public class DPadController : MonoBehaviour
+using DigitalRubyShared;
+public class DPadController : MonoBehaviour
     {
         [Tooltip("Fingers DPad Script #1")] public FingersDPadScript DPadScript;
 
@@ -74,4 +72,3 @@ namespace DigitalRubyShared
             startLaunching.Invoke();
         }
     }
-}

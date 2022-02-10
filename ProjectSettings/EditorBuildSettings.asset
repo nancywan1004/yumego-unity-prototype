@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Levels/Level 4 prototype.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  m_configObjects:
+    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 7f7abf39e9cb746b7a235a08b087fdbb, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bd319029c9b7f472689903226d89267d, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5ca88bafb01df4bd0837d7516ff7b8ec, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 35cc88fa0515545b49b39d32fcd7e6d1, type: 2}

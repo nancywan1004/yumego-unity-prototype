@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DigitalRubyShared;
 
-namespace DigitalRubyShared
-{
-    public class JoyStickController : MonoBehaviour
+public class JoyStickController : MonoBehaviour
     {
         [Tooltip("Fingers Joystick Script")]
         public FingersJoystickScript JoystickScript;
@@ -42,4 +41,3 @@ namespace DigitalRubyShared
             line.SetPosition(1, pos - Mover.transform.forward * 4);
         }
     }
-}
