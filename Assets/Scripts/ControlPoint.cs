@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ControlPoint : MonoBehaviour
 {
+    /*
     private float xRot, yRot = 0f;
     private Vector3 initPosition;
 
@@ -72,4 +73,5 @@ public class ControlPoint : MonoBehaviour
     {
         shootPower = power;
     }
+    */
 }

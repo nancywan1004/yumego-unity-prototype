@@ -5,36 +5,43 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
-    public Rigidbody ball;
+    public GameObject Ball;
+    public Transform ShotPoint;
     public float rotationSpeed = 2f;
     public Vector3 rotation;
     [SerializeField]
     public float shootPower;
     [SerializeField]
     public bool debugVelocity = false;
-    public LineRenderer line;
+    //public LineRenderer line;
     private Vector3 initPosition;
+    private Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
     {
         // line.gameObject.SetActive(false);
-        initPosition = ball.position;
-        line.gameObject.SetActive(true);
+        initPosition = transform.position;
+        //line.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = ball.position;
-        transform.rotation = ball.rotation;
+        //transform.position = ball.position;
+        //transform.rotation = ball.rotation;
         
-        line.SetPosition(0, transform.position);
-        line.SetPosition(1, new Vector3(transform.position.x, transform.position.y, transform.position.z) - transform.forward * 5);  //new Vector3(transform.position.x, transform.position.y, transform.position.x) - transform.forward * 5); 
-        if (Input.GetKey(KeyCode.R))
-        {
-            ResetPosition();
-        }
+        //line.SetPosition(0, transform.position);
+        //line.SetPosition(1, new Vector3(transform.position.x, transform.position.y, transform.position.z) - transform.forward * 5);  //new Vector3(transform.position.x, transform.position.y, transform.position.x) - transform.forward * 5); 
+        //if (Input.GetKey(KeyCode.R))
+        //{
+        //    ResetPosition();
+        //}
+
+
+
+
+
     }
 
     public void IncreasePower()
@@ -47,38 +54,44 @@ public class BallController : MonoBehaviour
         shootPower--;
     }
 
-    public void LaunchBall()
-    {
-        ball.velocity = -transform.forward * shootPower;
-        line.gameObject.SetActive(false);
-    }
+    //public void LaunchBall()
+    //{
+    //    //velocity = -transform.forward * shootPower;
+    //    //line.gameObject.SetActive(false);
+    //    //GameObject CreatedBall = Instantiate(Ball, ShotPoint.position, ShotPoint.rotation);
+    //    //CreatedBall.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * shootPower;
+
+
+
+    //}
 
     public void RotateLeft()
     {
         //ball.transform.Rotate(rotation * 500 * Time.deltaTime);
-        ball.transform.Rotate(0, -10, 0);
+        transform.Rotate(0, -10, 0);
 
     }
 
     public void RotateRight()
     {
-        ball.transform.Rotate(0, 10, 0);
+        transform.Rotate(0, 10, 0);
     }
 
     public void RotateUp()
     {
-        ball.transform.Rotate(10, 0, 0);
+        transform.Rotate(-10, 0, 0);
     }
 
     public void RotateDown()
     {
-        ball.transform.Rotate(-10, 0, 0);
+        transform.Rotate(10, 0, 0);
     }
     public void ResetPosition()
     {
-        ball.position = initPosition;
-        ball.velocity = Vector3.zero;
-        line.gameObject.SetActive(true);
+        
+        //transform.position = initPosition;
+        velocity = Vector3.zero;
+        //line.gameObject.SetActive(true);
 
     }
 

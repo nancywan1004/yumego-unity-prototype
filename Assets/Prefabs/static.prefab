@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooting Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 8739742315578470130, guid: ffe6e872af2a32b42903446f420ec6e1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8739742315578470133, guid: ffe6e872af2a32b42903446f420ec6e1, type: 3}
       propertyPath: m_RootOrder
       value: 0
